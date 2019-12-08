@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "name": "custom-server-express-app",
+    "builds": [
+        { "src": "next.config.js", "use": "@now/next" }
+    ],
+    "routes": [
+        { "src": "/(.*)/", "dest": "/$1", "status": 301, "headers": { "Location": "/$1" } },
+        { "src": "/posts/(?<id>[^/]+)$", "dest": "/posts?id=$id" }
+    ]
+}

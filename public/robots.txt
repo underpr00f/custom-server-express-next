@@ -1,0 +1,25 @@
+Sitemap: https://underproof-react-nextjs.netlify.com/sitemap.xml
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /*?mobile=true
+Disallow: /*?mobile=false
+Disallow: *?page=*
+Disallow: *?sort=*
+Disallow: *?limit=*
+Disallow: /xmlrpc.php
+
+User-agent: Yandex
+Allow: /
+Disallow: /admin
+Disallow: /*?mobile=true
+Disallow: /*?mobile=false
+Disallow: *?page=*
+Disallow: *?sort=*
+Disallow: *?limit=*
+Disallow: /xmlrpc.php
+
+host: https://underproof-react-nextjs.netlify.com
+
+
