@@ -1,14 +1,31 @@
 import { Layout } from "../components/Layout";
+import fetch from 'isomorphic-unfetch';
+import Link from 'next/link'
 
-export default () => {
+const A = ({ isLoading }) => {
     const title = "A page"
     const description = "A description"
+
     return (
         <Layout
             title={title}
             description={description}
+            isLoading={isLoading}
         >
-            <div>aaaa</div>
+            <h1>AAAAA</h1>
+
         </Layout>
     )
 }
+
+A.getInitialProps = async function () {
+    await new Promise(resolve => {
+        setTimeout(resolve, 1500)
+    })
+
+
+    return {
+    };
+};
+
+export default A;

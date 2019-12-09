@@ -19,6 +19,9 @@ export const Navbar = () => {
           <li className="nav-item" itemProp="name" role="menuitem">
             <Link href="/b" passHref><a itemProp="url" title="title of hyperlink">B-page</a></Link>
           </li>
+          <li className="nav-item" itemProp="name" role="menuitem">
+            <Link href="/about" passHref><a itemProp="url" title="title of hyperlink">About</a></Link>
+          </li>
         </ul>
 
         <style jsx>{`

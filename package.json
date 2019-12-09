@@ -1,6 +1,7 @@
 {
   "name": "custom-server-express",
   "version": "1.0.0",
+  "license": "ISC",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
@@ -11,7 +12,9 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "express": "^4.14.0",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "latest",
+    "nprogress": "^0.2.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },

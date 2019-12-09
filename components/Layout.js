@@ -16,6 +16,7 @@ const environment = process.env.NODE_ENV
 
 export const Layout = ({
     title,
+    isLoading,
     // protocol, 
     // host, 
     // pathname, 
@@ -28,6 +29,7 @@ export const Layout = ({
     //       window.ym(51751819, 'hit', pathname);      
     //     }
     //   }, []);
+    let LOADING = isLoading ? "loading" : "";
 
     return (
         <div>
@@ -58,11 +60,27 @@ export const Layout = ({
             <header className="header">
                 <Navbar />
             </header>
-            <main id="main" className="main">
+            <main id="main" className={`main ${LOADING}`}>
                 <div className="container">
                     {children}
                 </div>
             </main>
+            <style jsx>{`
+                main {
+                    // transform: rotate(0);
+                    opacity: 1;
+                    transition: 0.5s;
+                }                 
+                main.loading {
+                    // transform: rotate(15deg);
+                    opacity: 0;
+                    transition: 0.5s;
+                }
+                main.loading ul {
+                    display: none;
+                  }
+
+            `}</style>
         </div>
     )
 }

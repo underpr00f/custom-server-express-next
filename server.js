@@ -16,7 +16,9 @@ app.prepare().then(() => {
   server.get('/b', (req, res) => {
     return app.render(req, res, '/b')
   })
-
+  server.get('/about', (req, res) => {
+    return app.render(req, res, '/about')
+  })
   server.get('/posts/:id', (req, res) => {
     return app.render(req, res, '/posts', { id: req.params.id })
   })
