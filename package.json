@@ -11,12 +11,11 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "express": "^4.14.0",
+    "express": "latest",
     "isomorphic-unfetch": "^3.0.0",
-    "next": "latest",
-    "nprogress": "^0.2.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "next": "canary",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
     "next-compose-plugins": "^2.2.0",
