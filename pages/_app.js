@@ -13,7 +13,6 @@ export default class MyApp extends App {
       // Logging to prove _app.js only mounts once,
       // but initializing router events here will also accomplishes
       // goal of setting state on route change
-      console.log('MOUNT');
   
       Router.events.on('routeChangeStart', url => {
         console.log(`Loading: ${url}`)
@@ -29,7 +28,7 @@ export default class MyApp extends App {
     render() {
     const { Component, pageProps } = this.props
     const { isLoading } = this.state;
-    console.log(isLoading);
+
     return (
       <>
         <Component {...pageProps} isLoading={isLoading}/>

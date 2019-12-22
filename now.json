@@ -7,5 +7,23 @@
     "routes": [
         { "src": "/(.*)/", "dest": "/$1", "status": 301, "headers": { "Location": "/$1" } },
         { "src": "/posts/(?<id>[^/]+)$", "dest": "/posts?id=$id" }
-    ]
+    ],
+    "build": {
+		"env": {
+            "EMAIL_HOST": "@email-host",
+            "EMAIL_ACCOUNT": "@email-account",
+            "EMAIL_PASS": "@email-pass",
+            "EMAIL_FROM": "@email-from",
+            "EMAIL_SUBJECT": "@email-subject",
+            "API_URL": "@custom-server-express-next"
+		}
+	},
+    "env": {
+        "EMAIL_HOST": "@email-host",
+        "EMAIL_ACCOUNT": "@email-account",
+        "EMAIL_PASS": "@email-pass",
+        "EMAIL_FROM": "@email-from",
+        "EMAIL_SUBJECT": "@email-subject",
+        "API_URL": "@custom-server-express-next"
+    }
 }

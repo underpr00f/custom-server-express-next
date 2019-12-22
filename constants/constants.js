@@ -1,5 +1,5 @@
 export let STATIC_URL = "/";
 
-// if (process.env.NODE_ENV === "development") {
-// 	STATIC_URL = "/public/"
-// }
+export const API_URL = process.env.NODE_ENV === "production" ? 
+	""
+  :"http://localhost:3000";
