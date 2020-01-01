@@ -9,19 +9,19 @@ export const Navbar = () => {
       </button>
 
       <div className="collapse navbar-collapse" id="navbarColor01">
-        <Link href="/"><a className="navbar-brand">UCompany</a></Link>
+        <Link href="/" as="/" prefetch={false}><a className="navbar-brand">UCompany</a></Link>
         <ul className="navbar-nav mr-auto" itemScope itemType="http://schema.org/SiteNavigationElement">
           <li className="nav-item active" itemProp="name" role="menuitem">
-            <Link href="/"><a itemProp="url" title="title of hyperlink">Home</a></Link>
+            <Link href="/" as="/" prefetch={false}><a itemProp="url" title="title of hyperlink">Home</a></Link>
           </li>
           <li className="nav-item" itemProp="name" role="menuitem">
-            <Link href="/a"><a itemProp="url" title="title of hyperlink">A-page</a></Link>
+            <Link href="/contact" as="/contact" prefetch={false}><a itemProp="url" title="title of hyperlink">Contact page</a></Link>
           </li>
           <li className="nav-item" itemProp="name" role="menuitem">
-            <Link href="/b"><a itemProp="url" title="title of hyperlink">B-page</a></Link>
+            <Link href="/b" as="/b" prefetch={false}><a itemProp="url" title="title of hyperlink">B-page</a></Link>
           </li>
           <li className="nav-item" itemProp="name" role="menuitem">
-            <Link href="/about"><a itemProp="url" title="title of hyperlink">About</a></Link>
+            <Link href="/about" as="/about" prefetch={false}><a itemProp="url" title="title of hyperlink">About</a></Link>
           </li>
         </ul>
 

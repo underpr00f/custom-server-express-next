@@ -5,7 +5,7 @@ import { Layout } from '../components/Layout'
 const Home = () => {
 
   const title = "Welcome to Next.js"
-  const description = "Check current Bitcoin rate"
+  const description = "Next description Next description Next description Next description "
 
   return (
     <Layout
@@ -14,17 +14,17 @@ const Home = () => {
     >
       <ul>
         <li>
-          <Link href="/a" as="/a">
-            <a>a</a>
+          <Link href="/contact" as="/contact" prefetch={false}>
+            <a>Contact</a>
           </Link>
         </li>
         <li>
-          <Link href="/b" as="/b">
-            <a>b</a>
+          <Link href="/b" as="/b" prefetch={false}>
+            <a>B</a>
           </Link>
         </li>
         <li>
-          <Link href={{ pathname: '/posts', query: { id: '2' } }} as="/posts/2">
+          <Link href={{ pathname: '/posts', query: { id: '2' } }} as="/posts/2" prefetch={false}>
             <a>post #2</a>
           </Link>
         </li>

@@ -1,9 +1,11 @@
 {
   "name": "custom-server-express",
+  "homepage": ".",
   "version": "1.0.0",
   "license": "ISC",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "node server.js",
+    "dev:server": "nodemon server.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
     "export": "next export",
@@ -17,7 +19,8 @@
     "next": "canary",
     "nodemailer": "^6.4.2",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-hook-form": "^4.3.0"
   },
   "devDependencies": {
     "next-compose-plugins": "^2.2.0",

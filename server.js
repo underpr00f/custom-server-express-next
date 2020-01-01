@@ -13,11 +13,18 @@ const Mailer = require('./utils/Mailer')
 app.prepare().then(() => {
   const server = express()
 
+  // Set up the proxy.
+  server.use(function(req, res, next) {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      next();
+  });
+
   server.use(express.json());
   server.use(express.urlencoded({ extended: true }));
 
-  server.get('/a', (req, res) => {
-    return app.render(req, res, '/a')
+  server.get('/contact', (req, res) => {
+    return app.render(req, res, '/contact')
   })
 
   server.get('/b', (req, res) => {
@@ -31,11 +38,13 @@ app.prepare().then(() => {
   })
   server.post('/api/contact-email', (req, res) => { 
     // Mailer util
+    const {origin} = req.headers;
     const {text, email} = req.body;
 
     Mailer(
       email, 
       text, 
+      origin,
       function(err,data) {
         if (err) {
           res.status(500).json({message: "500 - Internal error"})          
@@ -43,7 +52,7 @@ app.prepare().then(() => {
           res.status(200).json({message: "200 - Message sent"})
         }
       }
-    )  
+    ) 
   });
   server.all('*', (req, res) => {
     return handle(req, res)

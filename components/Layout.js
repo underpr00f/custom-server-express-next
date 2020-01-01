@@ -76,9 +76,6 @@ export const Layout = ({
                     opacity: 0;
                     transition: 0.5s;
                 }
-                main.loading ul {
-                    display: none;
-                  }
 
             `}</style>
         </div>

@@ -29,9 +29,9 @@ const About = ({ isLoading, shows }) => {
 };
 
 About.getInitialProps = async function () {
-    await new Promise(resolve => {
-        setTimeout(resolve, 1500)
-    })
+    // await new Promise(resolve => {
+    //     setTimeout(resolve, 1500)
+    // })
     const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
     const data = await res.json();
 

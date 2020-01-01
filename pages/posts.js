@@ -2,9 +2,10 @@ import React from 'react'
 import { Layout } from "../components/Layout"
 import dynamic from "next/dynamic";
 import fetch from 'isomorphic-unfetch';
+import Loader from "../components/Loader";
 
 const LazyImage = dynamic(() => import("../components/LazyImage"), {
-  loading: () => <p>Loading...</p>
+  loading: () => <p>Loading....</p>
 });
 
 const Posts = ({ isLoading, show }) => {
@@ -27,9 +28,9 @@ const Posts = ({ isLoading, show }) => {
 }
 
 Posts.getInitialProps = async function ({query: { id }}) {
-  await new Promise(resolve => {
-    setTimeout(resolve, 1500)
-  })
+  // await new Promise(resolve => {
+  //   setTimeout(resolve, 1500)
+  // })
 
   const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
   const show = await res.json();
