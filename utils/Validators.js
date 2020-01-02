@@ -1,9 +1,9 @@
 // For check errors sleep promise
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-export const validateEmailInput = async (value) => {
-    await sleep(500);
-    return (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value));
+export const validateEmailInput = async value => {
+  await sleep(500)
+  return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
 }
 // export const multipleValidations = (value, validations) => {
 //     const checks = validations.map(validation => validation(value))

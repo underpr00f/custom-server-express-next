@@ -5,10 +5,10 @@
 
 // // const { getPosts } = require('./get-posts'); // This is a list of entries
 
-// module.exports = withPlugins( 
+// module.exports = withPlugins(
 //   [
 //     // withSass
-//   ], 
+//   ],
 //   {
 //     exportPathMap: async function(
 //       defaultPathMap,
@@ -27,7 +27,8 @@
 //       // now get the dynamic stuff:
 //     //   const articles = await getPosts();
 //     //   articles.map(post => {
-//     //     pathMap[`/posts/post/${post.link}`] = { page: '/posts/post', query: { title: post.link } };
+//     //     pathMap[`/posts/post/${post.link}`] = {
+//     //page: '/posts/post', query: { title: post.link } };
 //     //   });
 //       // This will copy robots.txt from your project root into the out directory
 //       // await copyFile(join(dir, 'robots.txt'), join(outDir, 'robots.txt'));

@@ -9,7 +9,10 @@
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
     "export": "next export",
-    "deploy": "yarn build && yarn export"
+    "deploy": "yarn build && yarn export",
+    "precommit": "lint-staged",
+    "eslint": "./node_modules/.bin/eslint . --ext .js,.jsx",
+    "eslint:fix": "./node_modules/.bin/eslint . --fix --ext .js,.jsx"
   },
   "dependencies": {
     "cross-env": "^5.2.0",
@@ -23,11 +26,36 @@
     "react-hook-form": "^4.3.0"
   },
   "devDependencies": {
+    "@material-ui/core": "^4.8.2",
+    "@material-ui/icons": "^4.5.1",
+    "@typescript-eslint/eslint-plugin": "2.x",
+    "@typescript-eslint/parser": "2.x",
+    "babel-eslint": "10.x",
+    "eslint": "6.x",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-react-app": "^5.1.0",
+    "eslint-plugin-flowtype": "3.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.x",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "next-compose-plugins": "^2.2.0",
     "nodemon": "^2.0.2",
-    "recursive-copy": "^2.0.10"
+    "prettier": "^1.19.1",
+    "recursive-copy": "^2.0.10",
+    "typescript": "^3.7.4"
   },
   "engines": {
     "node": "^8 || ^10"
+  },
+  "lint-staged": {
+    "*.{js, jsx}": [
+      "node_modules/.bin/eslint --max-warnings=0",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
