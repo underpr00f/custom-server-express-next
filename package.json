@@ -10,7 +10,6 @@
     "start": "cross-env NODE_ENV=production node server.js",
     "export": "next export",
     "deploy": "yarn build && yarn export",
-    "precommit": "lint-staged",
     "eslint": "./node_modules/.bin/eslint . --ext .js,.jsx",
     "eslint:fix": "./node_modules/.bin/eslint . --fix --ext .js,.jsx"
   },
@@ -40,7 +39,6 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "1.x",
-    "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "next-compose-plugins": "^2.2.0",
     "nodemon": "^2.0.2",
@@ -50,12 +48,5 @@
   },
   "engines": {
     "node": "^8 || ^10"
-  },
-  "lint-staged": {
-    "*.{js, jsx}": [
-      "node_modules/.bin/eslint --max-warnings=0",
-      "prettier --write",
-      "git add"
-    ]
   }
 }

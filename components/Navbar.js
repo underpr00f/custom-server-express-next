@@ -9,26 +9,30 @@ export const Navbar = () => {
     { linkName: 'Main', linkValue: '/' },
     { linkName: 'Contact', linkValue: '/contact' },
     { linkName: 'B', linkValue: '/b' },
-    { linkName: 'About', linkValue: '/about' },
+    { linkName: 'About', linkValue: '/about' }
   ]
 
   return (
-    <>
-      <MaterialBar itemScope itemType="http://schema.org/SiteNavigationElement">
-        {linksArray.map(linkElement => (
-          <NavLink key={linkElement.linkName} itemProp="name" role="menuitem">
-            <Link
-              href={linkElement.linkValue}
-              as={linkElement.linkValue}
-              prefetch={false}
-            >
-              <a itemProp="url" title="title of hyperlink">
-                {linkElement.linkName}
-              </a>
-            </Link>
-          </NavLink>
+      <>
+          <MaterialBar
+            itemScope
+            itemType="http://schema.org/SiteNavigationElement">
+              {linksArray.map(linkElement => (
+                  <NavLink
+                    key={ linkElement.linkName }
+                    itemProp="name"
+                    role="menuitem">
+                      <Link
+                        href={ linkElement.linkValue }
+                        as={ linkElement.linkValue }
+                        prefetch={ false }>
+                          <a
+                            itemProp="url"
+                            title="title of hyperlink">{linkElement.linkName}</a>
+                      </Link>
+                  </NavLink>
         ))}
-      </MaterialBar>
-    </>
+          </MaterialBar>
+      </>
   )
 }
