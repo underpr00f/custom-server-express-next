@@ -1,10 +1,10 @@
-/* eslint-disable */
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import App from 'next/app'
 import Router from 'next/router'
-import Loader from '../components/Loader'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import Loader from '../components/Loader'
 import theme from '../UI/Theme/theme'
 
 export default class MyApp extends App {
@@ -15,7 +15,7 @@ export default class MyApp extends App {
     // but initializing router events here will also accomplishes
     // goal of setting state on route change
 
-    Router.events.on('routeChangeStart', url => {
+    Router.events.on('routeChangeStart', (url) => {
       console.log(`Loading: ${url}`)
       this.setState({ isLoading: true })
     })
@@ -26,16 +26,20 @@ export default class MyApp extends App {
       this.setState({ isLoading: false })
     })
   }
+
   render() {
-    const { Component, pageProps } = this.props
+    const {
+      Component,
+      pageProps,
+      router: { pathname },
+    } = this.props
     const { isLoading } = this.state
 
     return (
       <>
         <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <Component {...pageProps} isLoading={isLoading} />
+          <Component {...pageProps} isLoading={isLoading} yourUrl={pathname} />
         </ThemeProvider>
         {isLoading && <Loader />}
       </>

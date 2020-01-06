@@ -18,7 +18,7 @@ app.prepare().then(() => {
     res.header('Access-Control-Allow-Origin', '*')
     res.header(
       'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
+      'Origin, X-Requested-With, Content-Type, Accept',
     )
     next()
   })
@@ -30,9 +30,9 @@ app.prepare().then(() => {
 
   server.get('/b', (req, res) => app.render(req, res, '/b'))
   server.get('/about', (req, res) => app.render(req, res, '/about'))
-  server.get('/posts/:id', (req, res) =>
+  server.get('/posts/:id', (req, res) => {
     app.render(req, res, '/posts', { id: req.params.id })
-  )
+  })
   server.post('/api/contact-email', (req, res) => {
     // Mailer util
     const { origin } = req.headers
@@ -42,14 +42,14 @@ app.prepare().then(() => {
       if (err) {
         res.status(500).json({ message: '500 - Internal error' })
       } else {
-        res.status(200).json({ message: '200 - Message sent' })
+        res.status(200).json({ message: '200 - Message sent', data })
       }
     })
   })
   server.all('*', (req, res) => handle(req, res))
 
-  server.listen(port, err => {
+  server.listen(port, (err) => {
     if (err) throw err
-    console.log(`> Ready on http://localhost:${ port }`)
+    console.log(`> Ready on http://localhost:${port}`)
   })
 })

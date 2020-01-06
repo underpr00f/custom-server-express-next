@@ -17,6 +17,12 @@ const theme = createMuiTheme({
       default: '#fff',
     },
   },
+  // '@global': {
+  //   'a': {
+  //       textDecoration: 'none!important',
+  //       color: '#fff!important',
+  //   },
+  // },
 })
 
 export default theme

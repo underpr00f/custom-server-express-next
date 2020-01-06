@@ -1,19 +1,6 @@
 {
-    "editor.formatOnPaste": false,
-    "editor.tabSize": 2,
-    "[javascript]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": true
-        },
-    },
-    "[html]": {
-        "editor.formatOnSave": false,
-    },
-    "[json]": {
-        "editor.formatOnSave": false,
-    },
-    "eslint.alwaysShowStatus": true,
-    "prettier.printWidth": 80,
-    "prettier.trailingComma": "es5",
-    "prettier.bracketSpacing": true,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
 }
