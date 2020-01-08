@@ -25,6 +25,13 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        <style jsx>
+          {`
+            html {
+              scroll-behavior: smooth;
+            }
+          `}
+        </style>
       </html>
     )
   }

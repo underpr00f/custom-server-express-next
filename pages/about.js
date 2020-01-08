@@ -32,6 +32,13 @@ const About = ({ isLoading, shows, yourUrl }) => {
           </li>
         ))}
       </ul>
+      {/* <style jsx>
+        {`
+          h1 {
+            color: yellow;
+          }
+        `}
+      </style> */}
     </Layout>
   )
 }

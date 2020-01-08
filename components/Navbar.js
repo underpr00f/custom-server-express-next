@@ -38,14 +38,15 @@ export const Navbar = ({ yourUrl }) => {
       <style jsx>
         {`
           a {
-            color: #fff;
+            color: #82dee6;
             text-decoration: none;
+            margin: 5px;
           }
           a.active {
-            color: yellow;
+            color: #e68b82;
           }
           a:hover {
-            color: #eee;
+            color: #13acbd;
           }
         `}
       </style>

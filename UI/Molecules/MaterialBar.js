@@ -9,6 +9,24 @@ import MenuIcon from '@material-ui/icons/Menu'
 import PropTypes from 'prop-types'
 
 const useStyles = makeStyles((theme) => ({
+  '@global': {
+    ul: {
+      margin: 0,
+      padding: 0,
+    },
+    li: {
+      listStyle: 'none',
+    },
+    h1: {
+      color: `${theme.palette.primary.main}`,
+    },
+    h4: {
+      color: `${theme.palette.secondary.main}`,
+    },
+    a: {
+      color: `${theme.palette.secondary.main}`,
+    },
+  },
   root: {
     flexGrow: 1,
   },
@@ -22,18 +40,18 @@ export const MaterialBar = ({ children }) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="default" elevation={0}>
         <Toolbar>
           <IconButton
             edge="start"
             className={classes.menuButton}
-            color="inherit"
+            color="secondary"
             aria-label="menu"
           >
             <MenuIcon />
           </IconButton>
           {children}
-          <Button color="inherit">Not Ready</Button>
+          <Button color="secondary">Not Ready</Button>
         </Toolbar>
       </AppBar>
     </div>

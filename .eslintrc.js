@@ -16,7 +16,15 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 'off', // Неправильно работает в Windows.
-    'operator-linebreak': [2, 'before'],
+    'operator-linebreak': [
+      'error',
+      'after',
+      {
+        overrides: {
+          ':': 'before',
+        },
+      },
+    ],
     'implicit-arrow-linebreak': ['error', 'beside'],
     'arrow-parens': 'off', // Несовместимо с prettier
     'object-curly-newline': 'off', // Несовместимо с prettier
