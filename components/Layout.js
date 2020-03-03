@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
-
+import { MaterialMain } from '../UI/Molecules/MaterialMain'
 import { Navbar } from './Navbar'
 
 // import { YandexMetrika } from '../utils/YandexMetrika'
@@ -74,7 +74,7 @@ export const Layout = ({
         <Navbar yourUrl={yourUrl} />
       </header>
       <main id="main" className={`main ${LOADING}`}>
-        <div className="container">{children}</div>
+        <MaterialMain>{children}</MaterialMain>
       </main>
       <style jsx>
         {`

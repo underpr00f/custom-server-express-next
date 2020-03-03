@@ -10,6 +10,9 @@ import PropTypes from 'prop-types'
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
+    html: {
+      scrollBehavior: 'smooth',
+    },
     ul: {
       margin: 0,
       padding: 0,
@@ -18,13 +21,16 @@ const useStyles = makeStyles((theme) => ({
       listStyle: 'none',
     },
     h1: {
-      color: `${theme.palette.primary.main}`,
+      color: `${theme.palette.primary.dark}`,
     },
     h4: {
-      color: `${theme.palette.secondary.main}`,
+      color: `${theme.palette.primary.main}`,
     },
     a: {
-      color: `${theme.palette.secondary.main}`,
+      color: `${theme.palette.primary.light}`,
+    },
+    'a.active': {
+      color: `${theme.palette.primary.dark}`,
     },
   },
   root: {

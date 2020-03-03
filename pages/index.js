@@ -5,25 +5,11 @@ import PropTypes from 'prop-types'
 
 import { Layout } from '../components/Layout'
 
-// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
-// const useMountEffect = (fun) => useEffect(fun, [])
-// window.onscroll = function() {
-//   // print "false" if direction is down and "true" if up
-//   console.log(this.oldScroll > this.scrollY)
-//   this.oldScroll = this.scrollY
-// }
-
 const Home = ({ isLoading, yourUrl }) => {
-  const title = 'Welcome to Next.js'
-  const description = 'Next description Next description Next '
+  const title = 'Welcome to my Next.js site'
+  const description = 'My NextJS MaterialUI site with testing features'
 
   const [scrollY, setScrollY] = useState(0)
-  // const [yourSection, setYourSection] = useState(0)
-  // const [nextRef, setNextRef] = useState(0)
-
-  // const myRef1 = useRef(null)
-  // const myRef2 = useRef(null)
-  // const myRef3 = useRef(null)
 
   function logit() {
     setScrollY(window.pageYOffset)
@@ -86,41 +72,42 @@ const Home = ({ isLoading, yourUrl }) => {
       isLoading={isLoading}
       yourUrl={yourUrl}
     >
-      <h1>{title}</h1>
-      <h4>{description}</h4>
-      <ul>
-        <li>
-          <Link href="/contact" as="/contact" prefetch={false}>
-            <a>Contact</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/b" as="/b" prefetch={false}>
-            <a>B</a>
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={{ pathname: '/posts', query: { id: '2' } }}
-            as="/posts/2"
-            prefetch={false}
-          >
-            <a>post #2</a>
-          </Link>
-        </li>
-      </ul>
+      <div className="title-container">
+        <h1>{title}</h1>
+        <h4>{description}</h4>
+      </div>
+      <div className="container">
+        <div className="xs-6">
+          <h6>You can visit some pages if you interested</h6>
+          <ul>
+            <li>
+              <Link href="/contact" as="/contact" prefetch={false}>
+                <a>Contact</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/b" as="/b" prefetch={false}>
+                <a>B</a>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={{ pathname: '/posts', query: { id: '2' } }}
+                as="/posts/2"
+                prefetch={false}
+              >
+                <a>post #2</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
       <style jsx>
         {`
-          section {
-            background-color: rgba(156, 25, 25, 0.87);
-            height: 100vh;
-          }
-          #section-one {
-            height: calc(100vh - 65px);
-          }
-          section:nth-child(odd) {
-            background-color: white;
-          }
+          // .title-container {
+          //   display: flex;
+          //   flex-direction: column;
+          // }
         `}
       </style>
     </Layout>

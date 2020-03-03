@@ -54,32 +54,34 @@ const Contact = ({ isLoading, yourUrl }) => {
       yourUrl={yourUrl}
     >
       <h1>{title}</h1>
-      <div className="row justify-content-center">
-        <form className="col" onSubmit={handleSubmit(onSubmit)}>
-          <h4 className="text-md-center">Please contact us</h4>
-          <div className="container">
-            <RenderField
-              validationType={register({
-                required: true,
-                minLength: 3,
-                validate: validateEmailInput,
-              })}
-              shortName="email"
-              nameType="emailInput"
-              errors={errors}
-            />
-            <RenderField
-              validationType={register({ required: true })}
-              shortName="text"
-              nameType="textInput"
-              errors={errors}
-            />
-            <CustomButton
-              type="submit"
-              text={submitting ? 'Sending' : 'Submit'}
-            />
-          </div>
-        </form>
+      <div className="container">
+        <div className="row">
+          <form className="xs-6" onSubmit={handleSubmit(onSubmit)}>
+            <h4 className="text-md-center">Please contact us</h4>
+            <div className="container">
+              <RenderField
+                validationType={register({
+                  required: true,
+                  minLength: 3,
+                  validate: validateEmailInput,
+                })}
+                shortName="email"
+                nameType="emailInput"
+                errors={errors}
+              />
+              <RenderField
+                validationType={register({ required: true })}
+                shortName="text"
+                nameType="textInput"
+                errors={errors}
+              />
+              <CustomButton
+                type="submit"
+                text={submitting ? 'Sending' : 'Submit'}
+              />
+            </div>
+          </form>
+        </div>
       </div>
     </Layout>
   )

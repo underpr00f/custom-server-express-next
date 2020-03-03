@@ -2,6 +2,7 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
 import theme from '../UI/Theme/theme'
+import { STATIC_URL } from '../constants/constants'
 
 class MyDocument extends Document {
   render() {
@@ -20,18 +21,12 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
+          <link href={`${STATIC_URL}styles.css`} rel="stylesheet" />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
-        <style jsx>
-          {`
-            html {
-              scroll-behavior: smooth;
-            }
-          `}
-        </style>
       </html>
     )
   }
