@@ -2,14 +2,20 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import fetch from 'isomorphic-unfetch'
 import PropTypes from 'prop-types'
+import { NextPageContext } from 'next';
 
 import { Layout } from '../components/Layout'
 
 const LazyImage = dynamic(() => import('../components/LazyImage'), {
   loading: () => <p>Loading....</p>,
 })
+type showType = {
+  name: string
+  image: {medium: string}  
+  summary: string
+}
 
-export const Posts = ({ isLoading, show }) => {
+export const Posts = ({ isLoading, show }: { isLoading:boolean, show: showType }) => {
   const title = `${show.name} page`
   const description = 'A description'
   return (
@@ -25,7 +31,7 @@ export const Posts = ({ isLoading, show }) => {
   )
 }
 
-Posts.getInitialProps = async (context) => {
+Posts.getInitialProps = async (context: NextPageContext) => {
   const { id } = context.query
   console.log('ctx', id)
   await new Promise((resolve) => {

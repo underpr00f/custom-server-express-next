@@ -8,7 +8,7 @@ import { validateEmailInput } from '../utils/Validators'
 import { CustomButton } from '../UI/Atoms/Button'
 import { RenderField } from '../UI/Atoms/RenderField'
 
-const Contact = ({ isLoading, yourUrl }) => {
+const Contact = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => {
   const title = 'Contact Us'
   const description = 'A description'
 
@@ -16,7 +16,7 @@ const Contact = ({ isLoading, yourUrl }) => {
 
   const { register, handleSubmit, reset, errors } = useForm()
 
-  const onSubmit = async (e) => {
+  const onSubmit = async (e: any) => {
     setSubmitting(true)
     console.log(e)
     const hitData = {

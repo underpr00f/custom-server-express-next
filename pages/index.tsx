@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import { Layout } from '../components/Layout'
 
-const Home = ({ isLoading, yourUrl }) => {
+const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => {
   const title = 'Welcome to my Next.js site'
   const description = 'My NextJS MaterialUI site with testing features'
 
@@ -64,7 +64,7 @@ const Home = ({ isLoading, yourUrl }) => {
   //   }
   // }
   // useMountEffect(() => scrollToNextRef(myRef)) // Scroll on mount
-  console.log(scrollY)
+  // console.log(scrollY)
   return (
     <Layout
       title={title}

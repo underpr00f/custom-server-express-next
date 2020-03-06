@@ -5,8 +5,15 @@ import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 
 import { Layout } from '../components/Layout'
-
-const About = ({ isLoading, shows, yourUrl }) => {
+import { EntryType } from 'perf_hooks'
+type showType = {
+  id: number,
+  name: string
+}
+type entryType = {
+  show: showType
+}
+const About = ({ isLoading, shows, yourUrl }: { isLoading:boolean, shows: Array<showType>, yourUrl:string }) => {
   const title = 'About page'
   const description = 'About description'
 
@@ -50,9 +57,9 @@ About.getInitialProps = async () => {
   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
   const data = await res.json()
   console.log(`Show data fetched. Count: ${data.length}`)
-
+  console.log("Hello")
   return {
-    shows: data.map((entry) => entry.show),
+    shows: data.map((entry:entryType) => entry.show),
   }
 }
 About.propTypes = {

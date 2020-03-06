@@ -1,14 +1,48 @@
-const express = require('express')
+import express, {Request, Response} from 'express'
 const nextserv = require('next')
+// import { Mailer } from '../utils/Mailer'
+// const Mailer = require('../utils/Mailer')
 
-const port = parseInt(process.env.PORT, 10) || 3000
+const yourPort = process.env.PORT && parseInt(process.env.PORT, 10)
+const port = yourPort || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = nextserv({ dev })
 const handle = app.getRequestHandler()
 
 require('dotenv').config()
 
-const Mailer = require('./utils/Mailer')
+// Mailer from utils file
+import nodemailer from 'nodemailer'
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: process.env.EMAIL_HOST,
+    pass: process.env.EMAIL_PASS,
+  },
+})
+const Mailer = (email:string, text:string, origin:string|undefined|string[], cb:any) => {
+  const mailOptions = {
+    from: process.env.EMAIL_FROM, // sender address
+    to: email, // list of receivers
+    subject: process.env.EMAIL_SUBJECT, // Subject line
+    text: `${text} from ${origin}`, // plain text body
+    html: `Got message <b>${text}</b> from <b>${origin}</b>`, // html body
+  }
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (err, data) => {
+    if (err) {
+      console.log('err', err)
+      cb(err, null)
+    } else {
+      cb(null, data)
+    }
+  })
+}
+
+interface Error {
+  status?: number;
+  message?: string;
+}
 
 app.prepare().then(() => {
   const server = express()
@@ -37,8 +71,7 @@ app.prepare().then(() => {
     // Mailer util
     const { origin } = req.headers
     const { text, email } = req.body
-
-    Mailer(email, text, origin, (err, data) => {
+    Mailer(email, text, origin, (err:Error, data:any) => {
       if (err) {
         res.status(500).json({ message: '500 - Internal error' })
       } else {
@@ -48,7 +81,7 @@ app.prepare().then(() => {
   })
   server.all('*', (req, res) => handle(req, res))
 
-  server.listen(port, (err) => {
+  server.listen(port, (err:Error) => {
     if (err) throw err
     console.log(`> Ready on http://localhost:${port}`)
   })

@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer')
+import nodemailer from 'nodemailer'
 
 const transporter = nodemailer.createTransport({
   service: 'Gmail',
@@ -8,7 +8,7 @@ const transporter = nodemailer.createTransport({
   },
 })
 
-const Mailer = (email, text, origin, cb) => {
+export const Mailer = (email:string, text:string, origin:string|undefined|string[], cb:any) => {
   const mailOptions = {
     from: process.env.EMAIL_FROM, // sender address
     to: email, // list of receivers
@@ -27,4 +27,4 @@ const Mailer = (email, text, origin, cb) => {
   })
 }
 
-module.exports = Mailer
+// module.exports = Mailer

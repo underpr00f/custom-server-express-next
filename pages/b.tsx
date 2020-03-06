@@ -3,25 +3,30 @@ import React, { useState, useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Layout } from '../components/Layout'
 // import ReactPageScroller from '../utils/PageScroller/ReactPageScroller'
+type refType = {
+  current: {offsetTop: number}
+}
+const scrollToRef = (ref: any) => window.scrollTo(0, ref.current.offsetTop)
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
-
-const B = ({ isLoading, yourUrl }) => {
+const B = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => {
   const title = 'B page'
   const description = 'B description'
   const [scrollY, setScrollY] = useState(0)
   const [scrollDirection, setScrollDirection] = useState(0)
-  const myRef1 = useRef(null)
-  const myRef2 = useRef(null)
-  const myRef3 = useRef(null)
+  const myRef1 = useRef<HTMLDivElement>(null)
+  const myRef2 = useRef<HTMLDivElement>(null)
+  const myRef3 = useRef<HTMLDivElement>(null)
   function logit() {
     if (scrollY && scrollY > window.pageYOffset) {
-      if (
+      if (null !== myRef1.current &&
+        null !== myRef2.current &&
         window.pageYOffset > myRef1.current.offsetTop &&
         window.pageYOffset < myRef2.current.offsetTop
       ) {
         setScrollDirection(1)
       } else if (
+        null !== myRef2.current &&
+        null !== myRef3.current &&
         window.pageYOffset > myRef2.current.offsetTop &&
         window.pageYOffset < myRef3.current.offsetTop
       ) {
@@ -29,11 +34,15 @@ const B = ({ isLoading, yourUrl }) => {
       }
     } else if (scrollY && scrollY < window.pageYOffset) {
       if (
+        null !== myRef1.current &&
+        null !== myRef2.current &&
         window.pageYOffset > myRef1.current.offsetTop &&
         window.pageYOffset < myRef2.current.offsetTop
       ) {
         setScrollDirection(2)
       } else if (
+        null !== myRef2.current &&
+        null !== myRef3.current &&
         window.pageYOffset > myRef2.current.offsetTop &&
         window.pageYOffset < myRef3.current.offsetTop
       ) {

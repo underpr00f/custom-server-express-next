@@ -1,10 +1,13 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 const Mailer = require('../../../utils/Mailer')
 
-export default (req, res) => {
+export default (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     const { text, email } = req.body
     const { origin } = req.headers
-    Mailer(email, text, origin, (err, data) => {
+    
+    Mailer(email, text, origin, (err:any, data:any) => {
+      console.log(err, data)
       if (err) {
         res.status(500).json({ message: '500 - Internal error' })
       } else {
