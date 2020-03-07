@@ -21,6 +21,10 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=Playfair+Display:100,200,300,400,600,500,700,800,900|Open+Sans:100,200,300,400,500,600,700,800,900&amp;subset=latin"
+            rel="stylesheet"
+          />
           <link href={`${STATIC_URL}styles.css`} rel="stylesheet" />
         </Head>
         <body>

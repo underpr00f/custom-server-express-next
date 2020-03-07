@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "name": "custom-server-express-app",
     "builds": [
         { "src": "next.config.js", "use": "@now/next" }
     ],

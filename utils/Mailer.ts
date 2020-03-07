@@ -8,7 +8,7 @@ const transporter = nodemailer.createTransport({
   },
 })
 
-export const Mailer = (email:string, text:string, origin:string|undefined|string[], cb:any) => {
+const Mailer = (email:string, text:string, origin:string|undefined|string[], cb:any) => {
   const mailOptions = {
     from: process.env.EMAIL_FROM, // sender address
     to: email, // list of receivers
@@ -27,4 +27,4 @@ export const Mailer = (email:string, text:string, origin:string|undefined|string
   })
 }
 
-// module.exports = Mailer
+module.exports = Mailer

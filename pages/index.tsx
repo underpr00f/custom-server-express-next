@@ -7,7 +7,7 @@ import { Layout } from '../components/Layout'
 
 const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => {
   const title = 'Welcome to my Next.js site'
-  const description = 'My NextJS MaterialUI site with testing features'
+  const description = 'We have created a new NextJS MaterialUI site that will help designers, developers and companies create websites for their startups quickly and easily.'
 
   const [scrollY, setScrollY] = useState(0)
 
@@ -72,10 +72,48 @@ const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => 
       isLoading={isLoading}
       yourUrl={yourUrl}
     >
-      <div className="title-container">
-        <h1>{title}</h1>
-        <h4>{description}</h4>
-      </div>
+      <section className="title">
+        <div className="title-container">
+          <div className="container">
+            <h1>{title}</h1>
+            <h4>{description}</h4>
+          </div>
+        </div>
+      </section>
+      <section className="benefits">
+        <div className="container">
+            <h2>My Benefits</h2>
+            <div className="row justify-content-center">
+            <div className="col-md-4 mb-50" data-aos-duration="800" data-aos="fade-up" data-aos-delay="400">
+              <i className="fas fa-briefcase f-60 action-3"></i>						<div className="mt-20 mb-25 f-22 title">Many Useful <br />Components</div>
+              <div className="color-heading text-adaptive">
+                Startup Framework contains 
+                components and complex blocks 
+                which can easily be integrated <br />
+                into almost any design.  
+              </div>
+            </div>
+            <div className="col-md-4 mb-50" data-aos-duration="800" data-aos="fade-up" data-aos-delay="800">
+              <i className="fas fa-compress-arrows-alt f-60 action-3"></i>						<div className="mt-20 mb-25 f-22 title">Responsive <br />Layout</div>
+              <div className="color-heading text-adaptive">
+                We haven’t forgotten about 
+                responsive layout. With Startup 
+                Framework, you can create a 
+                website with full mobile support. 
+              </div>
+            </div>
+            <div className="col-md-4 mb-50" data-aos-duration="800" data-aos="fade-up" data-aos-delay="1200">
+              <i className="fas fa-desktop f-60 action-3"></i>						<div className="mt-20 mb-25 f-22 title">Retina <br />Ready</div>
+              <div className="color-heading text-adaptive">
+                Startup Framework works on <br />
+                devices supporting Retina <br />
+                Display. Feel the clarity in each <br />
+                pixel. 
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div className="container">
         <div className="xs-6">
           <h6>You can visit some pages if you interested</h6>
@@ -104,10 +142,13 @@ const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => 
       </div>
       <style jsx>
         {`
-          // .title-container {
-          //   display: flex;
-          //   flex-direction: column;
-          // }
+          .title-container h1{
+            margin-bottom: 0.5em;
+            padding: 0 40px;
+          }
+          .title-container h4{
+            padding: 0 40px;
+          }
         `}
       </style>
     </Layout>
