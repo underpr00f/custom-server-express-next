@@ -4,37 +4,23 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 
 import { Layout } from '../components/Layout'
-import SectionTitle from '../components/Sections/SectionTitle'
+// import SectionTitle from '../components/Sections/SectionTitle'
 import SectionBenefits from '../components/Sections/SectionBenefits'
+import SectionSubtitle from '../components/Sections/SectionSubtitle'
+import SectionWorks from '../components/Sections/SectionWorks'
 
 const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => {
-  const title = 'Welcome to my Next.js site'
+  const title = 'Добро пожаловать в сервис'
   const description = 'We have created a new NextJS MaterialUI site that will help designers, developers and companies create websites for their startups quickly and easily.'
-
+  const imgUrl = 'https://images.unsplash.com/photo-1516853123998-f89d74dac6db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
+  const subtitleLink = "/"
+  const subtitleText = "Стоимость наших работ от 200 руб."
+  const buttonText = 'Проверить доступность'
   const [scrollY, setScrollY] = useState(0)
 
   function logit() {
     setScrollY(window.pageYOffset)
   }
-
-  // const scrollToRef = () => {
-  //   window.onscroll = function() {
-  //     // print "false" if direction is down and "true" if up
-  //     console.log(this.oldScroll > this.scrollY)
-  //     this.oldScroll = this.scrollY
-  //   }
-  // }
-  // const scrollToRef = (yourScroll, yourRef1, yourRef2, yourRef3) => {
-  //   console.log(yourScroll, yourRef1, yourRef2)
-  //   if (yourScroll > yourRef1 && yourScroll <= yourRef2) {
-  //     window.scrollTo(0, yourRef2)
-  //   } else if (yourScroll > yourRef2 && yourScroll <= yourRef3) {
-  //     window.scrollTo(0, yourRef3)
-  //   }
-  // }
-  // const showRef = (ref, nextRef) => {
-  //   window.scrollTo(0, nextRef)
-  // }
   useEffect(() => {
     function watchScroll() {
       window.addEventListener('scroll', logit)
@@ -42,41 +28,27 @@ const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => 
 
     watchScroll()
 
-    // scrollToRef()
-    // scrollToRef(
-    //   scrollY,
-    //   myRef1.current.offsetTop,
-    //   myRef2.current.offsetTop,
-    //   myRef3.current.offsetTop,
-    // )
-    // console.log(
-    //   myRef1.current && myRef1.current.offsetTop,
-    //   scrollY,
-    //   myRef2.current && myRef2.current.offsetTop,
-    // )
-    // Remove listener (like componentWillUnmount)
     return () => {
       window.removeEventListener('scroll', logit)
     }
   })
-  // const getRef = (e) => {
-  //   console.log(e.offSetTop)
-  //   if (scrollY > e.offSetTop) {
-  //     console.log(scrollY, e.offSetTop)
-  //   }
-  // }
-  // useMountEffect(() => scrollToNextRef(myRef)) // Scroll on mount
-  // console.log(scrollY)
+
   return (
     <Layout
       title={title}
       description={description}
       isLoading={isLoading}
       yourUrl={yourUrl}
+      imgUrl={imgUrl}
     >
-      <SectionTitle title={title} description={description} />
+      <SectionSubtitle 
+        subtitleLink={subtitleLink}
+        subtitleText={subtitleText}
+        buttonText={buttonText}
+      />
       <SectionBenefits />
-      <div className="container">
+      <SectionWorks />
+      {/* <div className="container">
         <div className="xs-6">
           <h6>You can visit some pages if you interested</h6>
           <ul>
@@ -101,7 +73,7 @@ const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => 
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
       <style jsx>
         {`
           .title-container h1{

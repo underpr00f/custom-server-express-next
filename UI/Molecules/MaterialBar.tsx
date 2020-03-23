@@ -20,12 +20,6 @@ const useStyles = makeStyles((theme) => ({
     li: {
       listStyle: 'none',
     },
-    h1: {
-      color: `${theme.palette.primary.dark}`,
-    },
-    h4: {
-      color: `${theme.palette.primary.main}`,
-    },
     a: {
       color: `${theme.palette.primary.light}`,
     },
@@ -41,23 +35,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export const MaterialBar = ({ children }) => {
+export const MaterialBar = ({ children }: {children:React.ReactNode}) => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default" elevation={0}>
+      <AppBar position="static" color="default" elevation={0} itemScope itemType={"http://schema.org/SiteNavigationElement"}>
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             edge="start"
             className={classes.menuButton}
             color="secondary"
             aria-label="menu"
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           {children}
-          <Button color="secondary">Not Ready</Button>
+          {/* <Button color="secondary">Not Ready</Button> */}
         </Toolbar>
       </AppBar>
     </div>

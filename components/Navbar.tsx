@@ -4,28 +4,21 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 import { MaterialBar } from '../UI/Molecules/MaterialBar'
 import { NavLink } from '../UI/Atoms/NavLink'
+import { linksArray } from '../constants/constants'
 
-export const Navbar = ({ yourUrl }) => {
-  const linksArray = [
-    { linkName: 'Main', linkValue: '/' },
-    { linkName: 'Contact', linkValue: '/contact' },
-    { linkName: 'B', linkValue: '/b' },
-    { linkName: 'About', linkValue: '/about' },
-  ]
+export const Navbar = ({ yourUrl }: {yourUrl?:string}) => {
   return (
     <>
-      <MaterialBar itemScope itemType="http://schema.org/SiteNavigationElement">
+      <MaterialBar>
         {linksArray.map((linkElement) => (
-          <NavLink key={linkElement.linkName} itemProp="name" role="menuitem">
+          <NavLink key={linkElement.linkName}>
             <Link
               href={linkElement.linkValue}
               as={linkElement.linkValue}
               prefetch={false}
             >
               <a
-                className={
-                  yourUrl && linkElement.linkValue === yourUrl && 'active'
-                }
+                className={ yourUrl && linkElement.linkValue === yourUrl ? 'active':""}
                 itemProp="url"
                 title="title of hyperlink"
               >
@@ -40,9 +33,6 @@ export const Navbar = ({ yourUrl }) => {
           a {
             text-decoration: none;
             margin: 5px;
-          }
-          a:hover {
-            color: #13acbd;
           }
         `}
       </style>

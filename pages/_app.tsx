@@ -6,6 +6,7 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Loader from '../components/Loader'
 import theme from '../UI/Theme/theme'
+import '../styles.scss'
 
 export default class MyApp extends App {
   state = { isLoading: false }

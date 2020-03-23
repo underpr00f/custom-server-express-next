@@ -5,10 +5,10 @@ import { red } from '@material-ui/core/colors'
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#82DEE6',
+      main: '#296291',
     },
     secondary: {
-      main: '#e68b82',
+      main: '#f27639',
     },
     error: {
       main: red.A400,
@@ -18,6 +18,21 @@ const theme = createMuiTheme({
     },
     text: {
       primary: 'rgba(0, 0, 0, 0.87)',
+      secondary: '#fdfdfe',
+      hint: '#7e8890',
+    },
+  },
+  overrides: {
+    MuiInputLabel: {
+      // Name of the component ⚛️ / style sheet
+      root: {
+        // Name of the rule
+        color: '#296291',
+        '&$focused': {
+          // increase the specificity for the pseudo class
+          color: '#f27639',
+        },
+      },
     },
   },
 })

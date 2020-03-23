@@ -8,13 +8,18 @@ import { validateEmailInput } from '../utils/Validators'
 import { CustomButton } from '../UI/Atoms/Button'
 import { RenderField } from '../UI/Atoms/RenderField'
 
-const Contact = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => {
-  const title = 'Contact Us'
-  const description = 'A description'
+type hitDataType = {
+  emailInput: string,
+  textInput: string
+}
 
+const Contact = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => {
+  const title = 'Свяжитесь с нами'
+  const description = 'Форма для обратной связи'
+  const imgUrl = 'https://images.unsplash.com/photo-1495435229349-e86db7bfa013?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1529&q=80'
   const [submitting, setSubmitting] = useState(false)
 
-  const { register, handleSubmit, reset, errors } = useForm()
+  const { register, handleSubmit, reset, errors } = useForm<hitDataType>()
 
   const onSubmit = async (e: any) => {
     setSubmitting(true)
@@ -52,12 +57,12 @@ const Contact = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) 
       description={description}
       isLoading={isLoading}
       yourUrl={yourUrl}
+      imgUrl={imgUrl}
     >
-      <h1>{title}</h1>
-      <div className="container">
+      <div className="container mt-3">
         <div className="row">
           <form className="xs-6" onSubmit={handleSubmit(onSubmit)}>
-            <h4 className="text-md-center">Please contact us</h4>
+            <h5 className="text-md-center">Пожалуйста свяжитесь с нами</h5>
             <div className="container">
               <RenderField
                 validationType={register({

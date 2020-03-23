@@ -8,21 +8,30 @@ import { Navbar } from './Navbar'
 // import { GoogleAnalitics } from '../utils/GoogleTag'
 
 import { STATIC_URL } from '../constants/constants'
+import Hero from './Sections/Hero'
+import { FooterBar } from './FooterBar'
 
 const defaultDescription = 'Course bitcoin, example SSR site, react nextjs'
 // const defaultOGURL = 'https://underproof-react-nextjs.netlify.com'
 const defaultTitle = 'Welcome to Next.js'
 // const environment = process.env.NODE_ENV
 
-export const Layout = ({
+export const Layout = (
+{ 
   title,
   isLoading,
   yourUrl,
-  // protocol,
-  // host,
-  // pathname,
+  imgUrl,
   description,
   children,
+}:
+{ 
+  title:string, 
+  description:string,
+  isLoading: boolean,
+  yourUrl?: string,
+  imgUrl?: string,
+  children: React.ReactNode
 }) => {
   //   let absoluteUrl = host ? protocol+"//"+host+pathname : defaultOGURL+pathname
   //   useEffect(() => {
@@ -70,23 +79,38 @@ export const Layout = ({
                     </>
                     : null} */}
       </Head>
-      <header className="header">
-        <Navbar yourUrl={yourUrl} />
-      </header>
-      <main id="main" className={`main ${LOADING}`}>
-        <MaterialMain>{children}</MaterialMain>
-      </main>
+      <div className={`common ${LOADING}`}>
+        <div className="content-wrap">
+          <header className="header">
+            <Navbar yourUrl={yourUrl} />
+            {imgUrl && <Hero imgUrl={imgUrl} title={title} description={description}/>}
+          </header>
+          <main id="main" >
+            <MaterialMain>{children}</MaterialMain>
+          </main>
+        </div>
+        <footer id="footer">
+          <FooterBar />
+        </footer>
+      </div>
       <style jsx>
         {`
-          main {
-            // transform: rotate(0);
+          .common {
             opacity: 1;
             transition: 0.5s;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
           }
-          main.loading {
-            // transform: rotate(15deg);
+          .common.loading {
             opacity: 0;
             transition: 0.5s;
+          }
+          .content-wrap {
+            flex: 1 0 auto;
+          }
+          #footer {
+            flex-shrink: 0;
           }
         `}
       </style>
@@ -99,4 +123,5 @@ Layout.propTypes = {
   description: PropTypes.string,
   children: PropTypes.node,
   yourUrl: PropTypes.string,
+  imgUrl: PropTypes.string,
 }

@@ -19,13 +19,12 @@ export const Posts = ({ isLoading, show }: { isLoading:boolean, show: showType }
   const title = `${show.name} page`
   const description = 'A description'
   return (
-    <Layout title={title} description={description} isLoading={isLoading}>
-      <div>
-        <h1>{show.name}</h1>
-        {show.image && show.image.medium && (
+    <Layout title={title} description={description} isLoading={isLoading} imgUrl={show.image.medium}>
+      <div className="container mt-5">
+        {/* {show.image && show.image.medium && (
           <LazyImage title={show.name} image={show.image.medium} />
-        )}
-        <p>{show.summary && show.summary.replace(/<[/]?[pb]>/g, '')}</p>
+        )} */}
+        <div className="color-heading text-adaptive">{show.summary && show.summary.replace(/<[/]?[pb]>/g, '')}</div>
       </div>
     </Layout>
   )

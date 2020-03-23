@@ -1,0 +1,31 @@
+// $primary-color: red;
+
+// body {
+//     background-color: $primary-color;
+// }
+
+header {
+    background-color: transparent!important;
+}
+.header {
+    position: relative;
+    width: 100%;
+}
+.header>div:first-child {
+    position: absolute;
+    width: 100%;
+}
+.header header {
+    width: 100%;
+}
+.banner-hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    width: 100%;
+}
+h1 {
+    text-align: center;
+}

@@ -9,12 +9,12 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-export const NavLink = ({ children }) => {
+export const NavLink = ({ children }: {children: React.ReactNode}) => {
   const classes = useStyles()
 
   return (
     <>
-      <Typography variant="h6" className={classes.title}>
+      <Typography variant="h6" className={classes.title} itemProp="name" role="menuitem">
         {children}
       </Typography>
     </>

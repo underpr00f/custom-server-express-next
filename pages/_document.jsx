@@ -2,7 +2,6 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
 import theme from '../UI/Theme/theme'
-import { STATIC_URL } from '../constants/constants'
 
 class MyDocument extends Document {
   render() {
@@ -25,7 +24,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Playfair+Display:100,200,300,400,600,500,700,800,900|Open+Sans:100,200,300,400,500,600,700,800,900&amp;subset=latin"
             rel="stylesheet"
           />
-          <link href={`${STATIC_URL}styles.css`} rel="stylesheet" />
         </Head>
         <body>
           <Main />

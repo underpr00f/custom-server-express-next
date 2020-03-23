@@ -1,20 +1,35 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import PropTypes from 'prop-types'
+import { makeStyles } from '@material-ui/core/styles'
 
+type RenderFieldType = {
+  validationType: any,
+  nameType: string, 
+  shortName: string,
+  errors: any,
+}
+const useStyles = makeStyles((theme) => ({
+  '@global': {
+    'form label': {
+      color: '#000'
+    }
+  }
+}))
 export const RenderField = ({
   validationType,
   nameType,
   shortName,
   errors,
-}) => {
+}: RenderFieldType) => {
+  const classes = useStyles()
   return (
     <>
       <TextField
         variant="outlined"
         margin="normal"
         fullWidth
-        label={`Input ${shortName}`}
+        label={`Введите ${shortName}`}
         name={nameType}
         autoComplete={shortName}
         autoFocus

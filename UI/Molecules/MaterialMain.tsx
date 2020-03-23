@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: "700",
       fontSize: "58px",
       lineHeight: "70px",
-      color: `${theme.palette.primary.main}`,
+      color: `${theme.palette.text.secondary}`,
+      textAlign: "center"
     },
     h2: {
       fontFamily: "Playfair Display, sans-serif",
@@ -24,17 +25,42 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "58px",
       lineHeight: "70px",
       color: `${theme.palette.primary.main}`,
+      textAlign: "center",
+      [theme.breakpoints.down('xs')]: {
+        fontSize: "45px",
+        lineHeight: "50px",
+      },
+    },
+    h3: {
+      fontFamily: "Playfair Display, sans-serif",
+      fontWeight: "700",
+      fontSize: "30px",
+      lineHeight: "70px",
+      color: `${theme.palette.primary.dark}`,
       textAlign: "center"
     },
     h4: {
       fontSize: '18px',
       lineHeight: '22px',
+      color: `${theme.palette.text.secondary}`,
+      margin: 0
+    },
+    h5: {
+      color: `${theme.palette.text.primary}`,
     },
     h6: {
       color: `${theme.palette.text.primary}`,
     },
-    'a.active': {
-      color: `${theme.palette.primary.dark}`,
+    'button span': {
+      color: `${theme.palette.text.secondary}`,
+    },
+    'header a': {
+      color: `${theme.palette.text.secondary}`,
+      opacity: 0.9
+    },
+    'header a.active, header a:hover': {
+      color: `${theme.palette.primary.light}`,
+      filter: "brightness(150%)",
     },
     '.title-container': {
       display: 'flex',
@@ -48,6 +74,68 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
       padding: '10em 3em 14em',
       textAlign: "center"
+    },
+    header: {
+      backgroundColor: 'transparent!important',
+    },
+    '.header': {
+      position: 'relative',
+      width: '100%'
+    },
+    '.header>div:first-child': {
+      position: 'absolute',
+      zIndex: 99,
+      left:'0',
+      right:'0'
+    },
+    '.header header': {
+      width: '100%',
+    },
+    '.banner-hero': {
+      height: '60vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
+      position: 'relative',
+    },
+    '.banner-img': {
+      position: 'absolute',
+      height: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      objectFit: 'cover',
+      width: '100%',
+      left:'0',
+      right:'0',
+      top:'0',
+      bottom:'0',
+      zIndex: -1
+    },
+    '.banner-content': {
+      display: 'flex',
+      flexDirection: 'column',
+      width: '600px',
+      padding: '0.5rem 1rem',
+      background: `radial-gradient(circle, ${theme.palette.primary.main} 0%, transparent 100%)`,
+    },
+    '.subtitle': {
+      background: `${theme.palette.primary.main}`,
+      padding: '2rem 0' 
+    },
+    '.subtitle-container': {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      [theme.breakpoints.down('xs')]: {
+        flexDirection: 'column'
+      },
+    },
+    '.subtitle-container h4': {
+      [theme.breakpoints.down('xs')]: {
+        marginBottom: '15px'
+      },
     },
   },
   root: {

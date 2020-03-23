@@ -5,7 +5,8 @@ import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 
 import { Layout } from '../components/Layout'
-import { EntryType } from 'perf_hooks'
+import { MaterialLink } from '../UI/Atoms/MaterialLink'
+
 type showType = {
   id: number,
   name: string
@@ -14,38 +15,44 @@ type entryType = {
   show: showType
 }
 const About = ({ isLoading, shows, yourUrl }: { isLoading:boolean, shows: Array<showType>, yourUrl:string }) => {
-  const title = 'About page'
-  const description = 'About description'
-
+  const title = 'Batman TV Shows'
+  const description = 'Batman TV Shows list choose to check'
+  const imgUrl = "https://images.unsplash.com/photo-1498252992631-9380b51a1baf?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9"
+  
   return (
     <Layout
       title={title}
       description={description}
       isLoading={isLoading}
       yourUrl={yourUrl}
+      imgUrl={imgUrl}
     >
-      <h1>Batman TV Shows</h1>
+      <MaterialLink 
+          text={"На главную"}
+          url={"/"}
+        />
       <ul>
         {shows.map((show) => (
           <li key={show.id}>
             <Link
               href={{ pathname: '/posts', query: { id: `${show.id}` } }}
               as={`/posts/${show.id}`}
-            >
-              <a>
-                {show.name} post #{show.id}
-              </a>
+            >              
+                <a>
+                  {show.name}
+                </a>
             </Link>
           </li>
         ))}
       </ul>
-      {/* <style jsx>
+      <style jsx>
         {`
-          h1 {
-            color: yellow;
+          li {
+            text-align: center;
+            font-size: 18px;
           }
         `}
-      </style> */}
+      </style>
     </Layout>
   )
 }

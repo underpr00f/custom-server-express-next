@@ -1,20 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { BusinessCenterImg, DirectionsCarImg, SettingsApplicationsImg } from '../../UI/Atoms/icons'
+import { WorkImg } from '../../UI/Atoms/WorkImg'
 
-// import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
 
-const SectionBenefits = (
+const SectionWorks = (
     // { title, description }:{ title:string, description:string }
     ) => {
   return (
-    <section className="benefits">
+    <section className="works">
     <div className="container">
-        <h2>Достижения</h2>
+        <h2>Посмотрите наши работы</h2>
         <div className="row justify-content-center">
-            <div className="col-md-4 mb-50 benefits-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="400">
-            <BusinessCenterImg />
-            <h5 className="mt-20 mb-25 f-22 title">Many Useful <br />Components</h5>
+            <div className="col-md-4 mb-50 works-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="400">
+            <WorkImg 
+              title={"Buick"}
+              url={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
             <div className="color-heading text-adaptive">
                 Startup Framework contains 
                 components and complex blocks 
@@ -22,9 +22,10 @@ const SectionBenefits = (
                 into almost any design.  
             </div>
             </div>
-            <div className="col-md-4 mb-50 benefits-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="800">
-            <DirectionsCarImg />
-            <h5 className="mt-20 mb-25 f-22 title">Responsive <br />Layout</h5>
+            <div className="col-md-4 mb-50 works-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="800">
+            <WorkImg 
+              title={"Ford"}
+              url={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
             <div className="color-heading text-adaptive">
                 We haven’t forgotten about 
                 responsive layout. With Startup 
@@ -32,9 +33,10 @@ const SectionBenefits = (
                 website with full mobile support. 
             </div>
             </div>
-            <div className="col-md-4 mb-50 benefits-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="1200">
-            <SettingsApplicationsImg />
-            <h5 className="mt-20 mb-25 f-22 title">Retina <br />Ready</h5>
+            <div className="col-md-4 mb-50 works-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="1200">
+            <WorkImg 
+              title={"Chevy"}
+              url={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
             <div className="color-heading text-adaptive">
                 Startup Framework works on
                 devices supporting Retina
@@ -46,10 +48,10 @@ const SectionBenefits = (
     </div>
     <style jsx>
         {`
-          .benefits {
+          .works {
               margin-bottom: 5em;
           }
-          .benefits-item{
+          .works-item{
             text-align: center;
           }
         `}
@@ -64,4 +66,4 @@ const SectionBenefits = (
 //   description: PropTypes.string,
 // }
 
-export default SectionBenefits
+export default SectionWorks

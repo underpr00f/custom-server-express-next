@@ -110,7 +110,7 @@ const B = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => {
         <img src="/images/chevy.jpeg" alt="chevy" />
       </section>
       <section id="section-three" ref={myRef3}>
-        <h1>corvette</h1>
+        <h1>Corvette</h1>
         <img
           src="https://images.unsplash.com/photo-1583156862930-822782625bb4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
           alt="corvette"
@@ -128,14 +128,16 @@ const B = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => {
           section h1 {
             text-align: center;
             position: absolute;
+            width:100%;
           }
           section img {
             object-fit: cover;
             height: 100vh;
             width: 100%;
           }
-          #section-one {
-          }
+          // #section-one h1{
+          //   top: 10%;
+          // }
           section:nth-child(even) {
           }
           #section-three {
