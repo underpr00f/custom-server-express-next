@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import { NextPageContext } from 'next';
 
 import { Layout } from '../components/Layout'
+import { MaterialContent } from '../UI/Molecules/MaterialContent';
 
 const LazyImage = dynamic(() => import('../components/LazyImage'), {
   loading: () => <p>Loading....</p>,
@@ -18,14 +19,13 @@ type showType = {
 export const Posts = ({ isLoading, show }: { isLoading:boolean, show: showType }) => {
   const title = `${show.name} page`
   const description = 'A description'
+
   return (
     <Layout title={title} description={description} isLoading={isLoading} imgUrl={show.image.medium}>
-      <div className="container mt-5">
-        {/* {show.image && show.image.medium && (
-          <LazyImage title={show.name} image={show.image.medium} />
-        )} */}
-        <div className="color-heading text-adaptive">{show.summary && show.summary.replace(/<[/]?[pb]>/g, '')}</div>
-      </div>
+        <MaterialContent>
+          <h3>Статья - {show.name}</h3>
+          <p className="color-heading text-adaptive">{show.summary && show.summary.replace(/<[/]?[pb]>/g, '')}</p>
+        </MaterialContent>
     </Layout>
   )
 }

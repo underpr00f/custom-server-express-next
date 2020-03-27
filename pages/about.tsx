@@ -6,6 +6,8 @@ import fetch from 'isomorphic-unfetch'
 
 import { Layout } from '../components/Layout'
 import { MaterialLink } from '../UI/Atoms/MaterialLink'
+import SectionSubtitle from '../components/Sections/SectionSubtitle'
+import { MaterialAbout } from '../UI/Molecules/MaterialAbout'
 
 type showType = {
   id: number,
@@ -18,7 +20,7 @@ const About = ({ isLoading, shows, yourUrl }: { isLoading:boolean, shows: Array<
   const title = 'Batman TV Shows'
   const description = 'Batman TV Shows list choose to check'
   const imgUrl = "https://images.unsplash.com/photo-1498252992631-9380b51a1baf?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9"
-  
+
   return (
     <Layout
       title={title}
@@ -27,32 +29,23 @@ const About = ({ isLoading, shows, yourUrl }: { isLoading:boolean, shows: Array<
       yourUrl={yourUrl}
       imgUrl={imgUrl}
     >
-      <MaterialLink 
-          text={"На главную"}
-          url={"/"}
-        />
-      <ul>
-        {shows.map((show) => (
-          <li key={show.id}>
-            <Link
-              href={{ pathname: '/posts', query: { id: `${show.id}` } }}
-              as={`/posts/${show.id}`}
-            >              
-                <a>
-                  {show.name}
-                </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <style jsx>
-        {`
-          li {
-            text-align: center;
-            font-size: 18px;
-          }
-        `}
-      </style>
+      <MaterialAbout>
+        <h3>Почитать статьи: </h3>
+        <ul>
+          {shows.map((show) => (
+            <li key={show.id}>
+              <Link
+                href={{ pathname: '/posts', query: { id: `${show.id}` } }}
+                as={`/posts/${show.id}`}
+              >              
+                  <a>
+                    {show.name}
+                  </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </MaterialAbout>
     </Layout>
   )
 }

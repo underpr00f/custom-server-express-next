@@ -1,6 +1,7 @@
 import { NextPageContext } from "next";
 import { Layout } from "../components/Layout";
 import SectionSubtitle from "../components/Sections/SectionSubtitle";
+import { MaterialContent } from "../UI/Molecules/MaterialContent";
 
 const Error = ({ statusCode, isLoading, yourUrl }:{statusCode:number, isLoading:boolean, yourUrl:string }) => {
   const title = `Ошибка ${statusCode}`
@@ -24,11 +25,12 @@ const Error = ({ statusCode, isLoading, yourUrl }:{statusCode:number, isLoading:
         subtitleText={subtitleText}
         buttonText={buttonText}
       />
-    <p>
-      {statusCode
+      <MaterialContent>
+          <h3>{statusCode
         ? `Ошибка ${statusCode} получена от сервера`
-        : "Ошибка получена от клиента"}
-    </p>
+        : "Ошибка получена от клиента"}</h3>
+          <p className="color-heading text-adaptive">Данной страницы не существует, просьба вернуться или перейти на главную</p>
+      </MaterialContent>
     </Layout>
   );
 };

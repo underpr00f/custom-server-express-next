@@ -7,6 +7,7 @@ import { API_URL } from '../constants/constants'
 import { validateEmailInput } from '../utils/Validators'
 import { CustomButton } from '../UI/Atoms/Button'
 import { RenderField } from '../UI/Atoms/RenderField'
+import { MaterialForm } from '../UI/Molecules/MaterialForm'
 
 type hitDataType = {
   emailInput: string,
@@ -59,6 +60,7 @@ const Contact = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) 
       yourUrl={yourUrl}
       imgUrl={imgUrl}
     >
+      <MaterialForm>
       <div className="container mt-3">
         <div className="row">
           <form className="xs-6" onSubmit={handleSubmit(onSubmit)}>
@@ -88,6 +90,7 @@ const Contact = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) 
           </form>
         </div>
       </div>
+      </MaterialForm>
     </Layout>
   )
 }

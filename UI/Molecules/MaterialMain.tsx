@@ -15,9 +15,13 @@ const useStyles = makeStyles((theme) => ({
       fontFamily: "Playfair Display, sans-serif",
       fontWeight: "700",
       fontSize: "58px",
-      lineHeight: "70px",
+      lineHeight: "58px",
       color: `${theme.palette.text.secondary}`,
-      textAlign: "center"
+      textAlign: "center",
+      [theme.breakpoints.down('xs')]: {
+        fontSize: "45px",
+        lineHeight: "45px",
+      },
     },
     h2: {
       fontFamily: "Playfair Display, sans-serif",
@@ -136,6 +140,9 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.down('xs')]: {
         marginBottom: '15px'
       },
+    },
+    '.subtitle-container a': {
+      color: "#fff"
     },
   },
   root: {
