@@ -7,6 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Loader from '../components/Loader'
 import theme from '../UI/Theme/theme'
 import '../styles.scss'
+import 'swiper/css/swiper.css'
 
 export default class MyApp extends App {
   state = { isLoading: false }

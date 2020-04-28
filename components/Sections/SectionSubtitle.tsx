@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { MaterialLink } from '../../UI/Atoms/MaterialLink'
+import { MaterialSubtitle } from '../../UI/Molecules/MaterialSubtitle'
 
 const SectionSubtitle= (
   { 
@@ -9,6 +10,7 @@ const SectionSubtitle= (
     subtitleLink:string, subtitleText:string, buttonText:string 
   }) => {
   return (
+    <MaterialSubtitle>
       <section className="subtitle">
         <div className="container subtitle-container">            
           <h4>{subtitleText}</h4>
@@ -19,13 +21,8 @@ const SectionSubtitle= (
             url={subtitleLink}
           />
         </div>
-        <style jsx>
-          {`
-
-          `}
-        </style>
       </section>
-
+    </MaterialSubtitle>
   )
 }
 

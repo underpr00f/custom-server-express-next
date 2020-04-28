@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: '5em 10em',
+    margin: '5em 1em',
   },
 }))
 

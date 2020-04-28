@@ -17,6 +17,7 @@ const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => 
   const subtitleText = "Стоимость наших работ от 200 руб."
   const buttonText = 'Проверить доступность'
   const [scrollY, setScrollY] = useState(0)
+  const withSlider = true
 
   function logit() {
     setScrollY(window.pageYOffset)
@@ -40,6 +41,7 @@ const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => 
       isLoading={isLoading}
       yourUrl={yourUrl}
       imgUrl={imgUrl}
+      withSlider={withSlider}
     >
       <SectionSubtitle 
         subtitleLink={subtitleLink}
@@ -48,6 +50,7 @@ const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => 
       />
       <SectionBenefits />
       <SectionWorks />
+      {/* <SectionSlider /> */}
       {/* <div className="container">
         <div className="xs-6">
           <h6>You can visit some pages if you interested</h6>

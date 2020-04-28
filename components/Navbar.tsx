@@ -28,14 +28,6 @@ export const Navbar = ({ yourUrl }: {yourUrl?:string}) => {
           </NavLink>
         ))}
       </MaterialBar>
-      <style jsx>
-        {`
-          a {
-            text-decoration: none;
-            margin: 5px;
-          }
-        `}
-      </style>
     </>
   )
 }

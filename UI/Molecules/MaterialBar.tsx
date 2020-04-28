@@ -29,6 +29,18 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     flexGrow: 1,
+    '& a': {
+      textDecoration: 'none',
+      opacity: 0.9,
+    },
+    '& a:hover': {
+      color: '#fff',
+      opacity: 1,
+    },
+    '& a.active': {
+      textDecoration: 'underline',
+      color: `#fff`,
+    },
   },
   menuButton: {
     marginRight: theme.spacing(2),

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: '8em 0 10em',
+    margin: '3em 0 6em',
     '& h3': {
       fontSize: '44px',
       lineHeight: '46px',

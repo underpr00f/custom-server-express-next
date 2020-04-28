@@ -24,6 +24,7 @@ export const Layout = (
   imgUrl,
   description,
   children,
+  withSlider,
 }:
 { 
   title:string, 
@@ -31,7 +32,8 @@ export const Layout = (
   isLoading: boolean,
   yourUrl?: string,
   imgUrl?: string,
-  children: React.ReactNode
+  children: React.ReactNode,
+  withSlider?: boolean,
 }) => {
   //   let absoluteUrl = host ? protocol+"//"+host+pathname : defaultOGURL+pathname
   //   useEffect(() => {
@@ -83,7 +85,7 @@ export const Layout = (
         <div className="content-wrap">
           <header className="header">
             <Navbar yourUrl={yourUrl} />
-            {imgUrl && <Hero imgUrl={imgUrl} title={title} description={description}/>}
+            <Hero imgUrl={imgUrl} withSlider={withSlider} title={title} description={description}/>
           </header>
           <main id="main" >
             <MaterialMain>{children}</MaterialMain>

@@ -13,11 +13,14 @@ const useStyles = makeStyles((theme) => ({
       },
     '& ul': {
         display: 'grid',
-        gridTemplateColumns: "repeat(3, 1fr)",
-        gridGap: '10px',
+        gridTemplateColumns: "repeat(auto-fill, minmax(260px, max-content))",
+        gridGap: '1em 2em',
         fontSize: '18px',
         lineHeight: '26px',
-        textAlign: 'center',
+        textAlign: 'left',
+    },
+    '& a': {
+      // whiteSpace: 'nowrap',
     },
   },
 }))

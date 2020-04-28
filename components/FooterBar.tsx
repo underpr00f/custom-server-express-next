@@ -18,44 +18,18 @@ export const FooterBar = () => {
           <BottomNavItem key={linkElement.linkName} text={linkElement.linkName} value={linkElement.linkValue} />
         ))}
         </div>
-        <div className="footer-contact"></div>
+        <div className="footer-contact">
+          <ul>
+            <li>Свяжитесь с нами:</li>
+            <li>info@boutique.com</li>
+            <li>109241, г. Москва, Котельническая наб., д. 117</li>
+            <li>8 800 123 33 24</li>
+          </ul></div>
         <div className="footer-copyright"> 
               2020 - created by underproof
         </div>
       </div>
       </MaterialFooter>
-      <style jsx>
-        {`
-          a {
-            text-decoration: none;
-            margin: 5px;
-            
-          }
-          .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 2.5rem 0 0.5rem;
-          }
-          .footer-list {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-          }
-          .footer-copyright {
-            padding: 3rem 0 0;
-            flex: 1 1 100%;
-            text-align:center;
-            opacity: 0.8;
-          }
-          img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-          }
-        `}
-      </style>
     </>
   )
 }
