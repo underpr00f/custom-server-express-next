@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { WorkImg } from '../../UI/Atoms/WorkImg'
+import { MaterialWorks } from '../../UI/Molecules/MaterialWorks'
 
 
 const SectionWorks = (
     // { title, description }:{ title:string, description:string }
     ) => {
   return (
+    <MaterialWorks>
     <section className="works">
     <div className="container">
         <h2>Посмотрите наши работы</h2>
@@ -46,17 +48,8 @@ const SectionWorks = (
             </div>
       </div>
     </div>
-    <style jsx>
-        {`
-          .works {
-              margin-bottom: 5em;
-          }
-          .works-item{
-            text-align: center;
-          }
-        `}
-      </style>
   </section>
+  </MaterialWorks>
 
   )
 }

@@ -34,6 +34,7 @@
     "react-dom": "^16.13.1",
     "react-hook-form": "^4.3.0",
     "react-id-swiper": "^3.0.0",
+    "react-yandex-maps": "^4.3.0",
     "sass": "^1.26.3",
     "swiper": "^5.3.8"
   },

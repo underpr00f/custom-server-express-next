@@ -12,16 +12,17 @@ const LazyImage = dynamic(() => import('../components/LazyImage'), {
 })
 type showType = {
   name: string
-  image: {medium: string}  
+  image?: {medium: string}  
   summary: string
 }
 
 export const Posts = ({ isLoading, show }: { isLoading:boolean, show: showType }) => {
   const title = `${show.name} page`
   const description = 'A description'
+  const imgUrl = "https://images.unsplash.com/photo-1584824486509-112e4181ff6b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
 
   return (
-    <Layout title={title} description={description} isLoading={isLoading} imgUrl={show.image.medium}>
+    <Layout title={title} description={description} isLoading={isLoading} imgUrl={show&&show.image?show.image.medium:imgUrl}>
         <MaterialContent>
           <h3>Статья - {show.name}</h3>
           <p className="color-heading text-adaptive">{show.summary && show.summary.replace(/<[/]?[pb]>/g, '')}</p>

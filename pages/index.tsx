@@ -8,6 +8,9 @@ import { Layout } from '../components/Layout'
 import SectionBenefits from '../components/Sections/SectionBenefits'
 import SectionSubtitle from '../components/Sections/SectionSubtitle'
 import SectionWorks from '../components/Sections/SectionWorks'
+import SectionTestimonials from '../components/Sections/SectionTestimonials'
+import SectionPricing from '../components/Sections/SectionPricing'
+import SectionMap from '../components/Sections/SectionMap'
 
 const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => {
   const title = 'Добро пожаловать в сервис'
@@ -50,33 +53,9 @@ const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => 
       />
       <SectionBenefits />
       <SectionWorks />
-      {/* <SectionSlider /> */}
-      {/* <div className="container">
-        <div className="xs-6">
-          <h6>You can visit some pages if you interested</h6>
-          <ul>
-            <li>
-              <Link href="/contact" as="/contact" prefetch={false}>
-                <a>Contact</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/b" as="/b" prefetch={false}>
-                <a>B</a>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={{ pathname: '/posts', query: { id: '2' } }}
-                as="/posts/2"
-                prefetch={false}
-              >
-                <a>post #2</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div> */}
+      <SectionTestimonials />
+      <SectionPricing />
+      <SectionMap />
       <style jsx>
         {`
           .title-container h1{
