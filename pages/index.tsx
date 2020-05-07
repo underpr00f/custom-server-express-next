@@ -11,8 +11,10 @@ import SectionWorks from '../components/Sections/SectionWorks'
 import SectionTestimonials from '../components/Sections/SectionTestimonials'
 import SectionPricing from '../components/Sections/SectionPricing'
 import SectionMap from '../components/Sections/SectionMap'
+import { NextPageContext } from 'next'
+import { YMConstant } from '../constants/YMConstant'
 
-const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => {
+const Home = ({ isLoading, yourUrl, YMConstant }: { isLoading:boolean, yourUrl:string, YMConstant:string }) => {
   const title = 'Добро пожаловать в сервис'
   const description = 'We have created a new NextJS MaterialUI site that will help designers, developers and companies create websites for their startups quickly and easily.'
   const imgUrl = 'https://images.unsplash.com/photo-1516853123998-f89d74dac6db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
@@ -55,7 +57,7 @@ const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => 
       <SectionWorks />
       <SectionTestimonials />
       <SectionPricing />
-      <SectionMap />
+      <SectionMap YMConstant={YMConstant}/>
       <style jsx>
         {`
           .title-container h1{
@@ -73,5 +75,21 @@ const Home = ({ isLoading, yourUrl }: { isLoading:boolean, yourUrl:string }) => 
 Home.propTypes = {
   isLoading: PropTypes.bool,
   yourUrl: PropTypes.string,
+}
+
+Home.getInitialProps = async (context: NextPageContext) => {
+  // const { id } = context.query
+  // console.log('ctx', id)
+  // await new Promise((resolve) => {
+  //   setTimeout(resolve, 1500)
+  // })
+
+  // const res = await fetch(`https://api.tvmaze.com/shows/${id}`)
+  // const show = await res.json()
+
+  // console.log(`Fetched show: ${show.name}`)
+  return {
+    YMConstant
+  }
 }
 export default Home

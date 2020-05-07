@@ -2,6 +2,7 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
 import theme from '../UI/Theme/theme'
+import { YMap } from '../utils/YMap'
 
 class MyDocument extends Document {
   render() {
@@ -24,6 +25,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Playfair+Display:100,200,300,400,600,500,700,800,900|Open+Sans:100,200,300,400,500,600,700,800,900&amp;subset=latin"
             rel="stylesheet"
           />
+          {/* <YMap /> */}
         </Head>
         <body>
           <Main />
@@ -60,7 +62,7 @@ MyDocument.getInitialProps = async (ctx) => {
   // Render app and page and get the context of the page with collected side effects.
   const sheets = new ServerStyleSheets()
 
-  const { styles, ...initialProps } = await Document.getInitialProps({
+  const { styles, ...initialProps }:any = await Document.getInitialProps({
     ...ctx,
     renderPage: () =>
       // eslint-disable-next-line implicit-arrow-linebreak

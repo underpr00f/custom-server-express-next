@@ -6,6 +6,28 @@ const useStyles = makeStyles((theme) => ({
   root: {
     "& .map-wrapper": {
       height: '400px',
+      background: '#c2c2c2',
+      "& #map": {
+        height: '100%',
+      },
+      '& .map-title__wrap': {
+        height: '100%',
+        width: '100%',
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: `${"url('../images/map.jpg') #c2c2c2 no-repeat"}`,
+        backgroundPosition: 'center center',
+        backgroundSize: 'cover',
+      },
+      '& h3': {        
+      },
+    },
+    "& .skeleton": {
+      width: '100%',
+      height: '400px',
+      backgroundColor: '#e2e2e2',
     },
   },
   // {

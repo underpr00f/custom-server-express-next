@@ -54,6 +54,14 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '50%',
         border: '3px solid #fff',
     },
+    '& .skeleton': {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        borderRadius: '50%',
+        border: '3px solid #fff',
+        backgroundColor: 'grey',
+    },
     '& .slide-content': {
         width: '100%',
         height: 'auto',

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { WorkImg } from '../../UI/Atoms/WorkImg'
 import { MaterialWorks } from '../../UI/Molecules/MaterialWorks'
+import LazyImage from '../LazyImage'
 
 
 const SectionWorks = (
@@ -14,9 +15,9 @@ const SectionWorks = (
         <h2>Посмотрите наши работы</h2>
         <div className="row justify-content-center">
             <div className="col-md-4 mb-50 works-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="400">
-            <WorkImg 
+            <LazyImage 
               title={"Buick"}
-              url={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
+              image={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
             <div className="color-heading text-adaptive">
                 Startup Framework contains 
                 components and complex blocks 
@@ -25,9 +26,9 @@ const SectionWorks = (
             </div>
             </div>
             <div className="col-md-4 mb-50 works-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="800">
-            <WorkImg 
+            <LazyImage
               title={"Ford"}
-              url={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
+              image={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
             <div className="color-heading text-adaptive">
                 We haven’t forgotten about 
                 responsive layout. With Startup 
@@ -36,9 +37,9 @@ const SectionWorks = (
             </div>
             </div>
             <div className="col-md-4 mb-50 works-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="1200">
-            <WorkImg 
+            <LazyImage
               title={"Chevy"}
-              url={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
+              image={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
             <div className="color-heading text-adaptive">
                 Startup Framework works on
                 devices supporting Retina

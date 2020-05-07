@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import { YandexMap } from '../YandexMap'
 import { MaterialMap } from '../../UI/Molecules/MaterialMap'
 
-const SectionMap = (
-
+const SectionMap = ({
+  YMConstant
+}:{YMConstant:string}
 ) => {
   const [title, setTitle] = useState<null|string>(null)
   useEffect(() => {
@@ -14,7 +15,7 @@ const SectionMap = (
     <MaterialMap>
       <section className="yandexmap">
         {title && <h2>{title}</h2> }
-        <YandexMap />
+        <YandexMap YMConstant={YMConstant}/>
       </section>
     </MaterialMap>
   )

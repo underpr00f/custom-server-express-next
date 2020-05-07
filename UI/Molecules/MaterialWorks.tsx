@@ -12,6 +12,14 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: '1em',
         margin: '0 0 1em',
     },
+    '& img': {
+      width: '100%',
+    },
+    '& .skeleton': {
+      width: '100%',
+      height: '100%',
+      backgroundColor: '#e2e2e2',
+    },
   },
 }))
 
