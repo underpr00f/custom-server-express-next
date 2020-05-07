@@ -15,7 +15,7 @@ const SectionWorks = (
         <h2>Посмотрите наши работы</h2>
         <div className="row justify-content-center">
             <div className="col-md-4 mb-50 works-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="400">
-            <LazyImage 
+            <WorkImg 
               title={"Buick"}
               image={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
             <div className="color-heading text-adaptive">
@@ -26,7 +26,7 @@ const SectionWorks = (
             </div>
             </div>
             <div className="col-md-4 mb-50 works-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="800">
-            <LazyImage
+            <WorkImg
               title={"Ford"}
               image={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
             <div className="color-heading text-adaptive">
@@ -37,7 +37,7 @@ const SectionWorks = (
             </div>
             </div>
             <div className="col-md-4 mb-50 works-item" data-aos-duration="800" data-aos="fade-up" data-aos-delay="1200">
-            <LazyImage
+            <WorkImg
               title={"Chevy"}
               image={'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=859&q=80'}/>
             <div className="color-heading text-adaptive">

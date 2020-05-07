@@ -22,17 +22,17 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
-export const WorkImg = ({ url,title }: {url:string, title:string}) => {
+export const WorkImg = ({ image,title }: {image:string, title:string}) => {
   const classes = useStyles()
   
   return (
       <div className={classes.wrap}>
-        <img src={url} alt={title} className={classes.image}/>
+        <img src={image} alt={title} className={classes.image}/>
         <h5 className={classes.desc}>{title}</h5>
       </div>    
   )
 }
 WorkImg.propTypes = {
   title: PropTypes.string,
-  url: PropTypes.string,
+  image: PropTypes.string,
 }
