@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     "& .map-wrapper": {
       height: '400px',
       background: '#c2c2c2',
+      position: 'relative',
       "& #map": {
         height: '100%',
       },
@@ -20,14 +21,23 @@ const useStyles = makeStyles((theme) => ({
         background: `${"url('../images/map.jpg') #c2c2c2 no-repeat"}`,
         backgroundPosition: 'center center',
         backgroundSize: 'cover',
-      },
-      '& h3': {        
+        position: 'absolute',
+        '& .loader': {
+          position: 'static',
+        },
+        '& h3': {
+          display: 'none',
+        },
+        [theme.breakpoints.down('sm')]: {
+          '& h3': {
+            display: 'inline-block',
+          },
+        },
       },
     },
-    "& .skeleton": {
-      width: '100%',
-      height: '400px',
-      backgroundColor: '#e2e2e2',
+    "& ymaps[class*='controls__control']": {
+      left:'auto!important',
+      right: '10px!important',
     },
   },
   // {
