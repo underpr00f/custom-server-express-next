@@ -7,7 +7,7 @@ export const API_URL =
 export const linksArray = [
   { linkName: 'Главная', linkValue: '/' },
   { linkName: 'Контакты', linkValue: '/contact' },
-  { linkName: 'Тесты', linkValue: '/b' },
+  { linkName: 'Strapi', linkValue: '/people' },
   { linkName: 'Batman', linkValue: '/about' },
 ]
 

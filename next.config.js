@@ -6,17 +6,17 @@
 // // const { getPosts } = require('./get-posts'); // This is a list of entries
 // const withCSS = require('@zeit/next-css')
 module.exports = {
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      issuer: {
-        test: /\.(js|ts)x?$/,
-      },
-      use: ['@svgr/webpack'],
-    })
-
-    return config
-  },
+  // exportTrailingSlash: true,
+  // webpack(config) {
+  //   config.module.rules.push({
+  //     test: /\.svg$/,
+  //     issuer: {
+  //       test: /\.(js|ts)x?$/,
+  //     },
+  //     use: ['@svgr/webpack'],
+  //   })
+  //   return config
+  // },
 }
 // module.exports = withPlugins([withCSS], {})
 // module.exports = withPlugins(
