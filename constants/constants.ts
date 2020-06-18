@@ -8,7 +8,7 @@ export const linksArray = [
   { linkName: 'Главная', linkValue: '/' },
   { linkName: 'Контакты', linkValue: '/contact' },
   { linkName: 'Strapi', linkValue: '/people' },
-  { linkName: 'Batman', linkValue: '/about' },
+  { linkName: 'Batman', linkValue: '/items' },
 ]
 
 export const sliderArray = [

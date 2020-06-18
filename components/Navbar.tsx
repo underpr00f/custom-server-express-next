@@ -20,7 +20,7 @@ export const Navbar = ({ yourUrl }: {yourUrl?:string}) => {
               <a
                 className={ yourUrl && linkElement.linkValue === yourUrl ? 'active':""}
                 itemProp="url"
-                title="title of hyperlink"
+                title={`${linkElement.linkName}`}
               >
                 {linkElement.linkName}
               </a>

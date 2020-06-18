@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 
-import { Layout } from '../components/Layout'
-import { MaterialLink } from '../UI/Atoms/MaterialLink'
-import SectionSubtitle from '../components/Sections/SectionSubtitle'
-import { MaterialAbout } from '../UI/Molecules/MaterialAbout'
+import { Layout } from '../../components/Layout'
+import { MaterialLink } from '../../UI/Atoms/MaterialLink'
+import SectionSubtitle from '../../components/Sections/SectionSubtitle'
+import { MaterialAbout } from '../../UI/Molecules/MaterialAbout'
 
 type showType = {
   id: number,
@@ -16,9 +16,9 @@ type showType = {
 type entryType = {
   show: showType
 }
-const About = ({ isLoading, shows, yourUrl }: { isLoading:boolean, shows: Array<showType>, yourUrl:string }) => {
-  const title = 'Batman TV Shows'
-  const description = 'Batman TV Shows list choose to check'
+const Items = ({ isLoading, shows, yourUrl }: { isLoading:boolean, shows: Array<entryType>, yourUrl:string }) => {
+  const title = 'Items Shows'
+  const description = 'Items Shows list choose to check'
   const imgUrl = "https://images.unsplash.com/photo-1498252992631-9380b51a1baf?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9"
 
   return (
@@ -32,14 +32,11 @@ const About = ({ isLoading, shows, yourUrl }: { isLoading:boolean, shows: Array<
       <MaterialAbout>
         <h3>Почитать статьи: </h3>
         <ul>
-          {shows.map((show) => (
-            <li key={show.id}>
-              <Link
-                href={{ pathname: '/posts', query: { id: `${show.id}` } }}
-                as={`/posts/${show.id}`}
-              >              
+          {shows.map((entry) => (
+            <li key={`item-${entry.show.id}`}>
+              <Link href="/items/[id]" as={`/items/${entry.show.id}`}>
                   <a>
-                    {show.name}
+                    {entry.show.name}
                   </a>
               </Link>
             </li>
@@ -50,21 +47,19 @@ const About = ({ isLoading, shows, yourUrl }: { isLoading:boolean, shows: Array<
   )
 }
 
-About.getInitialProps = async () => {
-  // await new Promise(resolve => {
-  //     setTimeout(resolve, 1500)
-  // })
+Items.getInitialProps = async () => {
+
   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
   const data = await res.json()
-  console.log(`Show data fetched. Count: ${data.length}`)
-  console.log("Hello")
+  const shows = data.map((entry:showType) => entry)
+
   return {
-    shows: data.map((entry:entryType) => entry.show),
+    shows: shows,
   }
 }
-About.propTypes = {
+Items.propTypes = {
   isLoading: PropTypes.bool,
   yourUrl: PropTypes.string,
   shows: PropTypes.array,
 }
-export default About
+export default Items
