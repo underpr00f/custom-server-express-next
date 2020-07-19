@@ -25,7 +25,7 @@
     "dotenv": "^8.2.0",
     "express": "latest",
     "isomorphic-unfetch": "^3.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "next": "^9.4.5-canary.8",
     "next-compose-plugins": "^2.2.0",
     "nodemailer": "^6.4.2",
