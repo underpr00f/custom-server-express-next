@@ -28,7 +28,7 @@
     "lodash": "^4.17.15",
     "next": "^9.4.5-canary.8",
     "next-compose-plugins": "^2.2.0",
-    "nodemailer": "^6.4.2",
+    "nodemailer": "^6.4.16",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
